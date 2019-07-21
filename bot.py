@@ -16,6 +16,8 @@ def echo(update, context):
     """Echo the user message."""
     if "Hey friends," in update.message.text:
         update.message.reply_text("What a great idea. How about today?")
+    if "boardgames" in update.message.text or " bg " in update.message.text:
+        update.message.reply_text("Boardgames are for nerds.")
 
 dispatcher = updater.dispatcher
 dispatcher.add_handler(MessageHandler(Filters.text, echo))
